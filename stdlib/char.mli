@@ -41,8 +41,10 @@ val compare: t -> t -> int
     allows the module [Char] to be passed as argument to the functors
     {!Set.Make} and {!Map.Make}. *)
 
-(**/**)
 
-(* The following is for system use only. Do not call directly. *)
 
 external unsafe_chr : int -> char = "%identity"
+(** Not for the casual users. 
+   Return the character with the given ASCII code.
+   Behaviour undefined if the argument is
+   outside the range 0--255. *)
